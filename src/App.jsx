@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import React, { useEffect, useState } from "react";
 
 const App = () => {
@@ -43,27 +45,30 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Weather App</h1>
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter location"
-          value={inputCity}
-          onChange={handleInputChange}
-        />
-        <button type="submit">Search</button>
-      </form>
-
-      <h2>Weather in {city}</h2>
-      {weather ? (
-        <div>
-          <p>Temperature: {weather.main.temp}°C</p>
-          <p>Condition: {weather.weather[0].description}</p>
-        </div>
-      ) : (
-        <p style={{ color: "red" }}>City not found. Please try again.</p>
-      )}
+    <div class="d-flex p-2">
+      <div className="container">
+        <h1>Weather App</h1>
+        <form className="form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Enter location"
+            value={inputCity}
+            onChange={handleInputChange}
+          />
+          <button type="submit" class="btn btn-primary">
+            Search
+          </button>
+        </form>
+        <h2>Weather in {city}</h2>
+        {weather ? (
+          <div>
+            <p>Temperature: {weather.main.temp}°C</p>
+            <p>Condition: {weather.weather[0].description}</p>
+          </div>
+        ) : (
+          <p style={{ color: "red" }}>City not found. Please try again.</p>
+        )}
+      </div>
     </div>
   );
 };
