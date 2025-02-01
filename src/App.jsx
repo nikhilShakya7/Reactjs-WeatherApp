@@ -49,7 +49,7 @@ const App = () => {
       case "Clouds":
         return "/images/thunder.webp";
       case "Rain":
-        return "/images/rain_with_clouds.webp";
+        return "/images/rain_with_cloud.webp";
       case "Mist":
       case "Clear":
         return "/images/sun.webp";
